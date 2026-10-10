@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الفنان عبدالله كومان | تقرير أداء سبتمبر – أكتوبر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5F1FB;
+    --paper:#FFFFFF;
+    --ink:#1A1A1A;
+    --purple:#5B2A86;
+    --purple-deep:#331A52;
+    --gold:#D9A441;
+    --gold-light:#F6E7C6;
+    --rust:#C23B3B;
+    --rust-light:#F7DADA;
+    --teal:#1F9D82;
+    --teal-light:#D7EFE8;
+    --line:#E4DAF2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Tajawal',Arial,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+  }
+  h1,h2,h3,.display{font-family:'Cairo',Arial,sans-serif;}
+  .container{max-width:1180px;margin:0 auto;padding:36px 20px 60px;}
+
+  /* HEADER */
+  .header{
+    background:linear-gradient(135deg,var(--purple) 0%, var(--purple-deep) 100%);
+    color:#fff;padding:56px 40px;border-radius:18px;margin-bottom:30px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .header::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle at 15% 20%, rgba(217,164,65,.20) 0, transparent 40%),
+                      radial-gradient(circle at 85% 80%, rgba(217,164,65,.16) 0, transparent 45%);
+  }
+  .header .eyebrow{position:relative;font-size:14px;letter-spacing:2px;color:var(--gold-light);font-weight:700;text-transform:uppercase;margin-bottom:14px;}
+  .header h1{position:relative;font-size:40px;font-weight:800;margin-bottom:10px;}
+  .header .accent{position:relative;width:90px;height:5px;margin:0 auto 18px;border-radius:2px;background:linear-gradient(90deg,var(--gold) 0 50%, var(--rust) 50% 100%);}
+  .header .date{position:relative;font-size:17px;opacity:.85;font-weight:500;}
+
+  .section{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:30px 32px;margin-bottom:26px;}
+  .section-title{font-size:26px;font-weight:800;color:var(--ink);margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+  .section-title .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;}
+  .section-bar{width:60px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--purple) 0 50%, var(--rust) 50% 100%);margin-bottom:22px;}
+  .section-lead{font-size:14.5px;color:#3d4a63;margin-bottom:18px;}
+  .sub-title{font-size:18px;font-weight:800;color:var(--purple);margin:26px 0 12px;}
+
+  /* LISTS */
+  .plain-list{list-style:none;}
+  .plain-list li{position:relative;padding:10px 30px 10px 0;font-size:16px;border-bottom:1px dashed var(--line);}
+  .plain-list li:last-child{border-bottom:none;}
+  .plain-list li::before{content:"◆";position:absolute;right:0;top:11px;color:var(--gold);font-size:11px;}
+
+  /* METRIC GRID */
+  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;}
+  .metric-card{padding:20px;border-radius:12px;border:1.5px solid var(--line);background:#FAF7FD;}
+  .metric-card .metric-label{font-size:13px;color:#6b5b8a;font-weight:700;margin-bottom:8px;}
+  .metric-card .metric-value{font-size:26px;font-weight:800;color:var(--purple);}
+  .metric-card .metric-sub{font-size:12px;color:#8a94a8;margin-top:4px;}
+  .metric-card.hero{background:linear-gradient(135deg,var(--purple) 0%, var(--purple-deep) 100%);color:#fff;border:none;}
+  .metric-card.hero .metric-label{color:rgba(255,255,255,.75);}
+  .metric-card.hero .metric-value{color:#fff;}
+  .metric-card.hero .metric-sub{color:rgba(255,255,255,.65);}
+  .metric-card.gold{background:var(--gold-light);border-color:#e2c884;}
+  .metric-card.gold .metric-value{color:#8a6417;}
+  .metric-card.gold .metric-label{color:#8a6417;}
+  .metric-card.rust{background:var(--rust-light);border-color:#e6b3ad;}
+  .metric-card.rust .metric-value{color:#a1401a;}
+  .metric-card.rust .metric-label{color:#a1401a;}
+  .metric-card.teal{background:var(--teal-light);border-color:#a9d9cc;}
+  .metric-card.teal .metric-value{color:#136b58;}
+  .metric-card.teal .metric-label{color:#136b58;}
+
+  /* TABLE */
+  table.report-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;}
+  table.report-table th{background:var(--purple);color:#fff;padding:10px 8px;font-weight:700;text-align:center;}
+  table.report-table td{padding:9px 8px;text-align:center;border-bottom:1px solid var(--line);}
+  table.report-table tr:nth-child(even) td{background:#FAF7FD;}
+  table.report-table td.hl{font-weight:800;color:var(--purple);}
+  table.report-table td.up{font-weight:800;color:#136b58;}
+  .table-wrap{overflow-x:auto;}
+
+  /* CAUSE / SOLUTION */
+  .cs-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;}
+  .cs-cell{padding:16px 18px;font-size:14px;}
+  .cs-cell.cause{background:var(--rust-light);}
+  .cs-cell.solution{background:var(--teal-light);}
+  .cs-tag{font-size:12px;font-weight:800;margin-bottom:4px;}
+  .cs-cell.cause .cs-tag{color:#a1401a;}
+  .cs-cell.solution .cs-tag{color:#136b58;}
+  .cs-head{font-weight:800;font-size:15px;margin-bottom:4px;color:var(--ink);}
+  .cs-text{color:#3d4a63;font-size:13.5px;}
+
+  /* UGC CARDS */
+  .ugc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+  .ugc-card{background:#FAF7FD;border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .ugc-num{width:26px;height:26px;border-radius:50%;background:var(--gold);color:#2A2413;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-bottom:8px;}
+  .ugc-name{font-weight:800;font-size:15.5px;color:var(--purple-deep);margin-bottom:6px;}
+  .ugc-text{font-size:13.5px;color:#3d4a63;}
+
+  /* ANALYST NOTES */
+  .note{border-radius:12px;padding:14px 18px;margin-bottom:12px;font-size:14px;display:flex;gap:10px;align-items:flex-start;}
+  .note .emoji{font-size:18px;}
+  .note.win{background:var(--teal-light);}
+  .note.challenge{background:var(--rust-light);}
+  .note.insight{background:#E7ECF6;}
+  .note.action{background:var(--gold-light);}
+
+  /* PRIORITY GRID */
+  .priority-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px;}
+  .priority-card{border-radius:12px;padding:16px 18px;}
+  .priority-card.critical{background:var(--rust-light);}
+  .priority-card.high{background:var(--teal-light);}
+  .priority-card.medium{background:var(--gold-light);}
+  .priority-card.normal{background:#E7ECF6;}
+  .priority-title{font-size:14px;font-weight:800;margin-bottom:6px;}
+  .priority-desc{font-size:12.5px;line-height:1.6;}
+
+  .verdict-box{background:linear-gradient(135deg,var(--purple) 0%, var(--purple-deep) 100%);color:#fff;border-radius:14px;padding:24px 26px;margin-top:20px;font-size:14.5px;line-height:1.9;}
+  .verdict-box strong{color:var(--gold-light);}
+
+  .footer{text-align:center;padding:26px;color:#5b6b8a;font-size:13px;}
+
+  @media (max-width:640px){
+    .header{padding:40px 22px;}
+    .header h1{font-size:30px;}
+    .section{padding:22px 18px;}
+    .cs-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="eyebrow">تقرير أداء الحملات الإعلانية</div>
+    <h1>الفنان عبدالله كومان</h1>
+    <div class="accent"></div>
+    <div class="date">سبتمبر – أكتوبر 2026 | حملة رسائل واتساب (إنستجرام) وحملة متابعين (تيك توك)</div>
+  </div>
+
+  <!-- WHAT WAS DONE -->
+  <div class="section">
+    <div class="section-title"><span class="dot"></span>ما تم عمله خلال الفترة</div>
+    <div class="section-bar"></div>
+    <ul class="plain-list">
+      <li>تم تركيز الميزانية على حملتين فقط خلال الفترة بدلًا من توزيعها على عدة حملات.</li>
+      <li>حملة رسائل واتساب على إنستجرام لاستقبال استفسارات الحجز.</li>
+      <li>حملة متابعين على تيك توك لبناء قاعدة جماهيرية للحساب ورفع مصداقيته أمام من يبحث عن الفنان قبل الحجز.</li>
+    </ul>
+  </div>
+
+  <!-- CAMPAIGN RESULTS -->
+  <div class="section">
+    <div class="section-title"><span class="dot"></span>نتائج الإعلانات</div>
+    <div class="section-bar"></div>
+    <p style="font-size:14px;color:#6b5b8a;margin-bottom:16px;">الفترة: سبتمبر – أكتوبر 2026</p>
+
+    <div class="metrics-grid" style="margin-bottom:24px;">
+      <div class="metric-card hero">
+        <div class="metric-label">إجمالي الإنفاق</div>
+        <div class="metric-value">623.56 ر.س</div>
+        <div class="metric-sub">على منصتي ميتا وتيك توك</div>
+      </div>
+      <div class="metric-card gold">
+        <div class="metric-label">محادثات واتساب (ميتا)</div>
+        <div class="metric-value">46</div>
+        <div class="metric-sub">6.11 ر.س لكل محادثة</div>
+      </div>
+      <div class="metric-card teal">
+        <div class="metric-label">متابعون جدد (تيك توك)</div>
+        <div class="metric-value">741</div>
+        <div class="metric-sub">0.46 ر.س لكل متابع</div>
+      </div>
+      <div class="metric-card rust">
+        <div class="metric-label">مرات ظهور الإعلانات</div>
+        <div class="metric-value">36,328</div>
+        <div class="metric-sub">من المنصتين معًا</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="report-table">
+        <tr><th>الحملة</th><th>المنصة</th><th>الإنفاق</th><th>النتيجة</th><th>تكلفة النتيجة</th><th>مرات ظهور الإعلانات</th><th>النقرات</th><th>CTR</th><th>تكلفة النقرة (CPC)</th></tr>
+        <tr><td class="hl">رسائل واتساب</td><td>ميتا (إنستجرام)</td><td>281.18 ر.س</td><td>46 محادثة</td><td>6.11 ر.س</td><td>19,334</td><td>811</td><td>4.19%</td><td>0.35 ر.س</td></tr>
+        <tr><td class="hl">متابعون (Followers)</td><td>تيك توك</td><td>342.38 ر.س</td><td>741 متابعًا</td><td>0.46 ر.س</td><td>16,994</td><td>—</td><td>—</td><td>—</td></tr>
+      </table>
+    </div>
+    <p style="font-size:12.5px;color:#8a94a8;margin-top:8px;">تكلفة الألف ظهور (CPM) على تيك توك: 20.15 ر.س. تفاعل إعلان إنستجرام: 9 مشاركات، 7 مرات حفظ، تعليقان.</p>
+
+    <div class="sub-title">حملة الواتساب مقارنةً بالفترة السابقة</div>
+    <div class="table-wrap">
+      <table class="report-table">
+        <tr><th>المؤشر</th><th>الفترة السابقة</th><th>سبتمبر – أكتوبر</th><th>التغيّر</th></tr>
+        <tr><td class="hl">الإنفاق</td><td>671.37 ر.س</td><td>281.18 ر.س</td><td class="up">−58%</td></tr>
+        <tr><td class="hl">عدد المحادثات</td><td>39</td><td>46</td><td class="up">+18%</td></tr>
+        <tr><td class="hl">تكلفة المحادثة</td><td>17.21 ر.س</td><td>6.11 ر.س</td><td class="up">−64%</td></tr>
+        <tr><td class="hl">CTR</td><td>2.32%</td><td>4.19%</td><td class="up">+1.87 نقطة</td></tr>
+        <tr><td class="hl">تكلفة النقرة</td><td>1.48 ر.س</td><td>0.35 ر.س</td><td class="up">−76%</td></tr>
+      </table>
+    </div>
+
+    <div class="sub-title">نمو حساب تيك توك</div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">المتابعون قبل الحملة</div>
+        <div class="metric-value">3,942</div>
+      </div>
+      <div class="metric-card teal">
+        <div class="metric-label">المتابعون بعد الحملة</div>
+        <div class="metric-value">4,666</div>
+        <div class="metric-sub">+724 متابعًا صافيًا (+18%)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">إجمالي الإعجابات</div>
+        <div class="metric-value">28.7K</div>
+        <div class="metric-sub">مقابل 27.6K قبل الحملة</div>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;">
+      <div class="note win"><span class="emoji">🟢</span><div><strong>Win:</strong> عدد المحادثات ارتفع إلى 46 بأقل من نصف إنفاق الفترة السابقة، وحساب تيك توك نما بنسبة 18% خلال الفترة بتكلفة 0.46 ر.س للمتابع.</div></div>
+      <div class="note challenge"><span class="emoji">🔴</span><div><strong>Challenge:</strong> انخفاض تكلفة المحادثة رافقه تراجع في جودتها، إذ وصلت نسبة ملحوظة من الرسائل من باحثين عن عمل أو برسائل خاطئة لا علاقة لها بالحجز. التفاصيل في القسم التالي.</div></div>
+      <div class="note insight"><span class="emoji">🔵</span><div><strong>Insight:</strong> المؤشر الأهم ليس تكلفة المحادثة، بل تكلفة المحادثة المؤهلة للحجز. محادثة بـ 6 ر.س من شخص غير مهتم بالحجز أغلى فعليًا من محادثة بـ 17 ر.س من عريس جادّ.</div></div>
+    </div>
+  </div>
+
+  <!-- MESSAGE QUALITY -->
+  <div class="section">
+    <div class="section-title"><span class="dot"></span>تحليل جودة رسائل الواتساب</div>
+    <div class="section-bar"></div>
+    <p class="section-lead">جزء من المحادثات الواردة خلال هذه الفترة لم يكن استفسارات حجز، بل طلبات عمل ورسائل خاطئة. فيما يلي الأسباب المرجّحة والحل المقابل لكل سبب.</p>
+
+    <div class="cs-row">
+      <div class="cs-cell cause">
+        <div class="cs-tag">السبب</div>
+        <div class="cs-head">الحملة تُحسَّن على عدد المحادثات لا على جودتها</div>
+        <div class="cs-text">خوارزمية ميتا تبحث عن الأشخاص الأكثر ميلًا لفتح محادثة بأقل تكلفة، وهؤلاء ليسوا بالضرورة أصحاب مناسبات. انخفاض التكلفة إلى 6.11 ر.س مؤشر على ذلك.</div>
+      </div>
+      <div class="cs-cell solution">
+        <div class="cs-tag">الحل</div>
+        <div class="cs-head">قياس المحادثات المؤهلة</div>
+        <div class="cs-text">العمل على تصنيف المحادثات أسبوعيًا (حجز / طلب عمل / خاطئة) واعتماد تكلفة المحادثة المؤهلة مؤشرًا للحكم على الحملة.</div>
+      </div>
+    </div>
+
+    <div class="cs-row">
+      <div class="cs-cell cause">
+        <div class="cs-tag">السبب</div>
+        <div class="cs-head">الفيديوهات الحالية لا توضّح أن الرقم للحجز فقط</div>
+        <div class="cs-text">الفيديوهات المستخدمة حاليًا في الإعلان تُظهر الفنان والفرقة دون رسالة حجز صريحة، فتجذب أيضًا عازفين ومنظّمين وباحثين عن فرصة عمل ضمن الفريق.</div>
+      </div>
+      <div class="cs-cell solution">
+        <div class="cs-tag">الحل</div>
+        <div class="cs-head">فيديوهات موجّهة لصاحب المناسبة</div>
+        <div class="cs-text">توفير فيديوهات تخاطب العريس وأهله من الثانية الأولى وتنتهي بدعوة صريحة للحجز، ليتفاعل معها الجمهور المستهدف فقط.</div>
+      </div>
+    </div>
+
+    <div class="cs-row">
+      <div class="cs-cell cause">
+        <div class="cs-tag">السبب</div>
+        <div class="cs-head">غياب محتوى يعكس تجربة عميل حقيقي</div>
+        <div class="cs-text">دون شهادة من عريس أو أهل مناسبة، لا يرى المشاهد نفسه في الإعلان كعميل، فيتفاعل معه كمحتوى فني عام.</div>
+      </div>
+      <div class="cs-cell solution">
+        <div class="cs-tag">الحل</div>
+        <div class="cs-head">فيديوهات UGC</div>
+        <div class="cs-text">توفير فيديوهات من عملاء سابقين تجذب تلقائيًا من يمرّ بالموقف نفسه، وتستبعد غير المعنيين بالحجز.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UGC -->
+  <div class="section">
+    <div class="section-title"><span class="dot"></span>الأولوية القادمة: محتوى فيديوهات UGC</div>
+    <div class="section-bar"></div>
+    <p class="section-lead">المحتوى الحالي (لقطات الحفلات والكواليس ورسائل الشكر) يجذب جمهورًا عامًا مهتمًا بالفن، فتتعلّم الخوارزمية منه وتوسّع الوصول إلى غير المعنيين بالحجز. المطلوب فيديوهات يتفاعل معها العريس وأهله فقط، لتتعلّم الخوارزمية من هي الشريحة الصحيحة:</p>
+
+    <div class="ugc-grid">
+      <div class="ugc-card">
+        <div class="ugc-num">1</div>
+        <div class="ugc-name">شهادة عريس بعد الحفل</div>
+        <div class="ugc-text">عريس سابق يتحدث بالجوال (20–30 ثانية) عن تجربته: لماذا اختار الفنان وكيف كان الحفل.</div>
+      </div>
+      <div class="ugc-card">
+        <div class="ugc-num">2</div>
+        <div class="ugc-name">افتتاحية تخاطب العريس مباشرة</div>
+        <div class="ugc-text">أول ثلاث ثوانٍ بعبارة مثل «زواجك قريب؟» نصًّا وصوتًا، فيكمل المشاهدة صاحب المناسبة ويتجاوزها غيره.</div>
+      </div>
+      <div class="ugc-card">
+        <div class="ugc-num">3</div>
+        <div class="ugc-name">«كيف حجزت فنان زفافي»</div>
+        <div class="ugc-text">عريس أو أحد أهله يروي خطوات الحجز من أول رسالة حتى يوم الحفل، من وجهة نظر العميل.</div>
+      </div>
+      <div class="ugc-card">
+        <div class="ugc-num">4</div>
+        <div class="ugc-name">أسئلة العرسان قبل الحجز</div>
+        <div class="ugc-text">الفنان يجيب عن أكثر ما يسأل عنه العرسان: المواعيد المتاحة، المدن، وما تشمله الفقرة.</div>
+      </div>
+    </div>
+
+    <div class="note action" style="margin-top:18px;"><span class="emoji">🟡</span><div><strong>Action:</strong> توفير 4–6 فيديوهات من هذه الأنواع خلال الشهر القادم بصيغة عمودية (9:16)، تنتهي كلها بدعوة صريحة للحجز، لاستخدامها في حملة الواتساب على إنستجرام.</div></div>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div class="section">
+    <div class="section-title"><span class="dot"></span>التوصيات وما يجب توفيره</div>
+    <div class="section-bar"></div>
+    <div class="priority-grid">
+      <div class="priority-card critical">
+        <div class="priority-title">🔴 أولوية عاجلة</div>
+        <div class="priority-desc">توفير فيديوهات UGC من عرسان وأهالي مناسبات سابقة — العنصر الأساسي لرفع جودة الرسائل والثقة.</div>
+      </div>
+      <div class="priority-card high">
+        <div class="priority-title">🟢 أولوية عالية</div>
+        <div class="priority-desc">توفير تصنيف أسبوعي للمحادثات الواردة (حجز / طلب عمل / خاطئة) لقياس تكلفة المحادثة المؤهلة.</div>
+      </div>
+      <div class="priority-card medium">
+        <div class="priority-title">🟡 أولوية متوسطة</div>
+        <div class="priority-desc">العمل على اختبار توسيع الاستهداف الجغرافي في حملة الواتساب خارج الرياض إلى مدن أخرى يغطيها الفنان، لمنح الخوارزمية مساحة أوسع للوصول إلى العرسان بدل تكرار الظهور على الجمهور نفسه.</div>
+      </div>
+      <div class="priority-card normal">
+        <div class="priority-title">🔵 مستمر</div>
+        <div class="priority-desc">العمل على استثمار قاعدة متابعي تيك توك الجديدة بنشر محتوى منتظم، مع متابعة تكلفة المتابع وصافي النمو.</div>
+      </div>
+      <div class="priority-card high" style="grid-column:1/-1;">
+        <div class="priority-title">🟢 الاستمرار بالحملتين</div>
+        <div class="priority-desc">
+          • إيقاف الحملات يُفقد الخوارزمية ما تعلّمته، والعودة لاحقًا تعني بدء مرحلة التعلّم وتكلفتها من جديد.<br>
+          • التكلفة في أفضل مستوياتها: 6.11 ر.س للمحادثة و0.46 ر.س للمتابع، والمشكلة في جودة الرسائل لا في الحملة نفسها، وحلّها بالمحتوى لا بالإيقاف.<br>
+          • الفيديوهات الجديدة تحتاج حملة قائمة لاختبارها وقياس أثرها على جودة الرسائل.<br>
+          • قرار حجز فنان الزفاف يُتخذ قبل المناسبة بأسابيع أو أشهر، والحضور المستمر يُبقي الفنان في ذهن العريس حتى لحظة القرار.
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      فترة سبتمبر – أكتوبر حققت <strong>كفاءة أعلى في التكلفة</strong>: 46 محادثة بتكلفة 6.11 ر.س، و741 متابعًا جديدًا على تيك توك بتكلفة 0.46 ر.س. في المقابل، كشفت الفترة أن المحادثة الأرخص ليست بالضرورة الأفضل، إذ جاء جزء من الرسائل من غير المهتمين بالحجز. التركيز القادم على <strong>جودة الرسائل لا عددها</strong>، مع <strong>الاستمرار بالحملتين</strong> وتغذيتهما بـ<strong>فيديوهات UGC</strong> من عملاء حقيقيين، لأنها تخاطب صاحب المناسبة مباشرة وتمنح قرار الحجز الثقة التي يحتاجها.
+    </div>
+  </div>
+
+  <div class="footer">
+    الفنان عبدالله كومان | تقرير أداء الحملات الإعلانية
+  </div>
+
+</div>
+</body>
+</html>
